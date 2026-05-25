@@ -11,16 +11,15 @@ tools: Read, Write, Edit, Glob, Grep, Bash, PowerShell
 负责半导体文档的解析、清洗、智能分块和元数据提取。**必须保留 source、section、page、content_type 元数据**，这是后续检索质量的基础。
 
 ## 允许修改的目录
-- `src/documents/` — 解析器、分块器、元数据提取器
-- `tests/test_documents/` — 文档处理测试
+- `src/docs_pipeline/` — Docling 转换、chunk、嵌入、FTS 检索
+- `tests/test_docs_pipeline/` — 文档处理测试
 
 ## 禁止修改的目录
-- `src/data/` — 数据层
-- `src/rag/` — RAG 管线
-- `src/embeddings/` — 嵌入层
-- `src/vectordb/` — 向量数据库
-- `src/tools/` — 工具层
-- `src/ui/` — 用户界面
+- `src/data_ops/` — 数据操作
+- `src/llm/` — LLM 调用
+- `src/app/` — UI 入口
+- `src/workflow/` — 工作流编排
+- `src/eval/` — 评估模块
 
 ## 输入
 - 原始文档文件 (.txt, .md, .pdf)

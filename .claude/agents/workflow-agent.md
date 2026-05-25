@@ -11,18 +11,16 @@ tools: Read, Write, Edit, Glob, Grep, Bash, PowerShell
 编排各模块为完整的工作流：文档索引流程（ingest）、用户问答流程（QA）、CLI 交互界面。负责连接 Data → Document → Embedding → VectorDB → RAG 各层。
 
 ## 允许修改的目录
-- `src/ui/` — CLI 界面
-- `src/workflow/` — 工作流编排（ingest pipeline, qa pipeline）
+- `src/app/` — LangGraph 入口、CLI 交互界面
+- `src/workflow/` — 路由、样本分析、报告生成、答案校验
 - `scripts/` — 入口脚本
-- `tests/test_workflow/` — 工作流测试
+- `tests/test_workflow/`、`tests/test_app/` — 工作流测试
 
 ## 禁止修改的目录
-- `src/data/` — 数据层
-- `src/documents/` — 文档处理
-- `src/rag/` — RAG 管线
-- `src/embeddings/` — 嵌入层
-- `src/vectordb/` — 向量数据库
-- `src/tools/` — 工具层
+- `src/data_ops/` — 数据操作
+- `src/docs_pipeline/` — 文档管线
+- `src/llm/` — LLM 调用
+- `src/eval/` — 评估模块
 
 ## 输入
 - RAG Agent 的检索器和生成器

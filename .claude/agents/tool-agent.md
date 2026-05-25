@@ -11,16 +11,15 @@ tools: Read, Write, Edit, Glob, Grep, Bash, PowerShell
 开发半导体领域专用工具函数，供 RAG 管线和 Workflow 调用。包括术语词典查询、单位转换、工艺参数计算、晶圆良率计算等。
 
 ## 允许修改的目录
-- `src/tools/` — 所有领域工具
-- `tests/test_tools/` — 工具层测试
+- `src/data_ops/` — 半导体领域工具函数（术语词典、单位转换、良率计算等）
+- `tests/test_data_ops/` — 工具测试
 
 ## 禁止修改的目录
-- `src/data/` — 数据层
-- `src/documents/` — 文档处理
-- `src/rag/` — RAG 管线
-- `src/embeddings/` — 嵌入层
-- `src/vectordb/` — 向量数据库
-- `src/ui/` — 用户界面
+- `src/docs_pipeline/` — 文档管线
+- `src/llm/` — LLM 调用
+- `src/app/` — UI 入口
+- `src/workflow/` — 工作流编排
+- `src/eval/` — 评估模块
 
 ## 输入
 - 半导体领域知识（术语表、公式、标准）

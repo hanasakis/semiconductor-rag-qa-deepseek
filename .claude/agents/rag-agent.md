@@ -11,17 +11,16 @@ tools: Read, Write, Edit, Glob, Grep, Bash, PowerShell
 构建完整的 RAG (Retrieval-Augmented Generation) 管线：文本嵌入 → 向量存储 → 语义检索 → 上下文组装 → LLM 生成。**运行时仅使用本地 Ollama DeepSeek-R1**。
 
 ## 允许修改的目录
-- `src/embeddings/` — Ollama 嵌入接口
-- `src/vectordb/` — 向量数据库操作 (ChromaDB)
-- `src/rag/` — 检索器、生成器、上下文组装器
-- `tests/test_rag/` — RAG 管线测试
+- `src/llm/` — Ollama DeepSeek-R1 调用、prompt 模板、输出清洗
+- `src/docs_pipeline/` — 嵌入和向量存储（ChromaDB 部分）
+- `tests/test_llm/` — LLM 层测试
 
 ## 禁止修改的目录
-- `src/data/` — 数据层
-- `src/documents/` — 文档处理
-- `src/tools/` — 工具层
-- `src/ui/` — 用户界面
-- `tests/test_data/`、`tests/test_documents/` 等非 RAG 测试
+- `src/data_ops/` — 数据操作
+- `src/app/` — UI 入口
+- `src/workflow/` — 工作流编排
+- `src/eval/` — 评估模块
+- `tests/test_data_ops/`、`tests/test_docs_pipeline/` 等非 LLM 测试
 
 ## 输入
 - Document Agent 输出的 DocumentChunk 列表

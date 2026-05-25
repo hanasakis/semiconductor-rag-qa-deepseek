@@ -4,13 +4,22 @@ python-dotenv>=1.0.0
 # LLM & Embeddings (local Ollama)
 ollama>=0.4.0
 
-# Vector Database
-chromadb>=0.5.0
+# Data Operations (SECOM + DuckDB)
+duckdb>=1.1.0
+pandas>=2.0.0
+numpy>=1.26.0
+scikit-learn>=1.5.0
 
-# Document Processing
+# Document Pipeline
 langchain>=0.3.0
 langchain-community>=0.3.0
 pypdf>=4.0.0
+docling>=2.0.0
+PyMuPDF>=1.24.0
+chromadb>=0.5.0
+
+# Workflow (LangGraph)
+langgraph>=0.2.0
 
 # Testing
 pytest>=8.0.0

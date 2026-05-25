@@ -11,18 +11,16 @@ tools: Read, Write, Edit, Glob, Grep, Bash, PowerShell
 负责半导体领域的数据模型定义、数据加载、数据验证。确保所有数据结构符合半导体行业术语与层级关系（Fab → Process → Equipment → Parameter）。
 
 ## 允许修改的目录
-- `src/data/` — 数据模型、加载器、验证器
+- `src/data_ops/` — SECOM 数据加载、DuckDB、异常分析
 - `src/config.py` — 数据相关配置项
-- `tests/test_data/` — 数据层测试
+- `tests/test_data_ops/` — 数据层测试
 
 ## 禁止修改的目录
-- `src/rag/` — RAG 管线
-- `src/documents/` — 文档处理
-- `src/embeddings/` — 嵌入层
-- `src/vectordb/` — 向量数据库
-- `src/tools/` — 工具层
-- `src/ui/` — 用户界面
-- `tests/test_documents/`、`tests/test_rag/` 等非数据层测试
+- `src/llm/` — LLM 调用
+- `src/docs_pipeline/` — 文档管线
+- `src/app/` — UI 入口
+- `src/workflow/` — 工作流编排
+- `src/eval/` — 评估模块
 - `data/raw/`、`data/processed/` — 禁止提交到 git
 
 ## 输入
