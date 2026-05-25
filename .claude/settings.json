@@ -1,0 +1,80 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/secrets/**)",
+      "Read(data/raw/**)",
+      "Read(data/processed/**)",
+      "Read(data/runtime/**)",
+      "Read(models/**)",
+      "Read(vector_store/**)",
+      "Read(chroma_db/**)",
+      "Read(chroma/**)",
+      "Write(data/raw/**)",
+      "Write(data/processed/**)",
+      "Write(data/runtime/**)",
+      "Write(models/**)",
+      "Write(vector_store/**)",
+      "Write(chroma_db/**)",
+      "Write(chroma/**)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(rm -rf *)",
+      "Bash(Remove-Item -Recurse -Force *)",
+      "PowerShell(curl *)",
+      "PowerShell(wget *)",
+      "PowerShell(Invoke-WebRequest *)"
+    ],
+
+    "allow": [
+      "Read(src/**)",
+      "Read(tests/**)",
+      "Read(docs/**)",
+      "Read(data/sample/**)",
+      "Read(data/eval/**)",
+      "Read(.claude/**)",
+      "Read(README.md)",
+      "Read(CLAUDE.md)",
+      "Read(.gitignore)",
+      "Read(.env.example)",
+      "Read(requirements.txt)",
+      "Write(src/**)",
+      "Write(tests/**)",
+      "Write(docs/**)",
+      "Write(data/sample/**)",
+      "Write(data/eval/**)",
+      "Write(.claude/**)"
+    ],
+
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(pip install *)",
+      "Bash(docker *)",
+      "Bash(ollama pull *)",
+      "Bash(ollama run *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git push *)",
+      "PowerShell(pip install *)",
+      "PowerShell(docker *)"
+    ]
+  },
+
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false,
+    "network": {
+      "allowedDomains": [
+        "localhost:11434",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "github.com"
+      ]
+    }
+  }
+}
