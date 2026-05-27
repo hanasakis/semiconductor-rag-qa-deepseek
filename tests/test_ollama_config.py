@@ -37,13 +37,17 @@ def test_client_uses_config_model():
     assert client.model == OLLAMA_MODEL
 
 
-def test_client_default_uses_config():
+def test_client_default_uses_config(monkeypatch):
     """When no model arg given, OllamaClient() uses OLLAMA_MODEL from config."""
-    from src.llm.ollama_client import OllamaClient
-    from src.config import OLLAMA_MODEL
+    monkeypatch.delenv("OLLAMA_MODEL", raising=False)
 
-    client = OllamaClient()
-    assert client.model == OLLAMA_MODEL
+    import importlib, src.config, src.llm.ollama_client
+    importlib.reload(src.config)
+    importlib.reload(src.llm.ollama_client)
+
+    client = src.llm.ollama_client.OllamaClient()
+    assert client.model == src.config.OLLAMA_MODEL
+    assert client.model == "deepseek-r1:8b"
 
 
 def test_no_cloud_api_keys():
